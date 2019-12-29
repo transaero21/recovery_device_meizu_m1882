@@ -55,6 +55,9 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
 
     setprop sys.usb.ffs.aio_compat 1
 
+    symlink /sbin/mke2fs /sbin/mke2fs_static
+    symlink /sbin/e2fsdroid /sbin/e2fsdroid_static
+
 on boot
     setprop sys.usb.config adb
 
