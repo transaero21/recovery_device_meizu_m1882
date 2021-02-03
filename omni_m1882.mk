@@ -14,27 +14,32 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := m1882
-
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_m1882
-PRODUCT_DEVICE := m1882
 PRODUCT_BRAND := Meizu
-PRODUCT_MODEL := 16th
+PRODUCT_DEVICE := m1882
 PRODUCT_MANUFACTURER := Meizu
+PRODUCT_MODEL := 16th
+PRODUCT_RELEASE_NAME := m1882
 
 TARGET_VENDOR_PRODUCT_NAME := m1882
 TARGET_VENDOR_DEVICE_NAME := m1882
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=m1882 \
     BUILD_PRODUCT=m1882 \
     PRODUCT_NAME=m1882
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="16th" \
+    PRODUCT_NAME="meizu_16th_CN" \
+    PRIVATE_BUILD_DESC="meizu_16th_CN-user 10 QKQ1.191222.002 1594833800 release-keys"
+
+BUILD_FINGERPRINT := meizu/qssi/qssi:10/QKQ1.191222.002/1594833800:user/release-keys
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.treble.enabled=true \
