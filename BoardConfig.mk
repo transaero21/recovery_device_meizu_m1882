@@ -23,6 +23,13 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+##############################################################################
+#
+# Apply this patch in order to properly support m1882 flashlight
+# https://gist.github.com/TRANSAERO21/02a8a32ac11332c63b6743d474cf667b
+#
+##############################################################################
+
 BOARD_VENDOR := meizu
 
 DEVICE_PATH := device/meizu/m1882
@@ -122,7 +129,10 @@ SHRP_REC := /dev/block/bootdevice/by-name/recovery
 SHRP_EDL_MODE := 1
 SHRP_INTERNAL := /sdcard
 SHRP_OTG := /usb-otg
-SHRP_FLASH := 0
+SHRP_FLASH := 1
+SHRP_FLASH_MAX_BRIGHTNESS := 0
+SHRP_CUSTOM_FLASHLIGHT := true
+SHRP_FONP_1 := /sys/class/meizu/flash/flash_both
 SHRP_EXPRESS := true
 SHRP_DARK := true
 SHRP_NO_SAR_AUTOMOUNT := true
