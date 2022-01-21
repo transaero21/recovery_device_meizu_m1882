@@ -25,8 +25,8 @@
 
 ##############################################################################
 #
-# Apply this patch in order to properly support m1882 flashlight
-# https://gist.github.com/TRANSAERO21/02a8a32ac11332c63b6743d474cf667b
+# Apply this patch in order to properly support m1882 flashlight and vibrator
+# https://gist.github.com/TRANSAERO21/881847e423ce543bfdf61c29cab83e77
 #
 ##############################################################################
 
@@ -116,7 +116,7 @@ TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_NO_HAPTICS := true 
+TW_NO_HAPTICS := false
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 

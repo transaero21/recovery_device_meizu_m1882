@@ -65,6 +65,26 @@ on init
     start hwservicemanager
     setprop crypto.ready 1
 
+    # Vibration motors
+    chown system system /sys/class/meizu/motor/on_off
+    chown system system /sys/class/meizu/motor/set_cspress
+    chown system system /sys/class/meizu/motor/set_mback
+    chown system system /sys/class/meizu/motor/rtp
+    chown system system /sys/class/meizu/motor/set_rtp
+    chown system system /sys/class/meizu/motor/freq
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/meizu/motor/timeout
+    chown system system /sys/class/meizu/motor/proline
+    chmod 0666 /sys/class/meizu/motor/on_off
+    chmod 0666 /sys/class/meizu/motor/set_cspress
+    chmod 0666 /sys/class/meizu/motor/set_mback
+    chmod 0666 /sys/class/meizu/motor/rtp
+    chmod 0666 /sys/class/meizu/motor/set_rtp
+    chmod 0666 /sys/class/meizu/motor/freq
+    chmod 0666 /sys/class/timed_output/vibrator/enable
+    chmod 0666 /sys/class/meizu/motor/timeout
+    chmod 0666 /sys/class/meizu/motor/proline
+
 on property:crypto.ready=0
     stop sbinqseecomd
     stop keymaster-3-0
