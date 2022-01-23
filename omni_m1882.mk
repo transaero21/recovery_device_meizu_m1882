@@ -14,9 +14,12 @@
 # limitations under the License.
 #
 
-$(call inherit-product, build/target/product/embedded.mk)
+# Set device codename before including makefiles
+PRODUCT_RELEASE_NAME := m1882
 
-# Inherit from our custom product configuration
+# Inherit product configurations
+$(call inherit-product, build/target/product/embedded.mk)
+$(call inherit-product, device/meizu/m1882/m1882.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_NAME := omni_m1882
@@ -24,7 +27,6 @@ PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1882
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_MODEL := 16th
-PRODUCT_RELEASE_NAME := m1882
 
 TARGET_VENDOR_PRODUCT_NAME := m1882
 TARGET_VENDOR_DEVICE_NAME := m1882

@@ -1,0 +1,32 @@
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+    setprop sys.usb.ffs.aio_compat 1
+
+    symlink /sbin/mke2fs /sbin/mke2fs_static
+    symlink /sbin/e2fsdroid /sbin/e2fsdroid_static
+
+on boot
+    setprop sys.usb.config adb
+
+on init
+    # Vibrator
+    chown system system /sys/class/meizu/motor/on_off
+    chown system system /sys/class/meizu/motor/set_cspress
+    chown system system /sys/class/meizu/motor/set_mback
+    chown system system /sys/class/meizu/motor/rtp
+    chown system system /sys/class/meizu/motor/set_rtp
+    chown system system /sys/class/meizu/motor/freq
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/meizu/motor/timeout
+    chown system system /sys/class/meizu/motor/proline
+    chmod 0666 /sys/class/meizu/motor/on_off
+    chmod 0666 /sys/class/meizu/motor/set_cspress
+    chmod 0666 /sys/class/meizu/motor/set_mback
+    chmod 0666 /sys/class/meizu/motor/rtp
+    chmod 0666 /sys/class/meizu/motor/set_rtp
+    chmod 0666 /sys/class/meizu/motor/freq
+    chmod 0666 /sys/class/timed_output/vibrator/enable
+    chmod 0666 /sys/class/meizu/motor/timeout
+    chmod 0666 /sys/class/meizu/motor/proline
