@@ -23,12 +23,6 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-##############################################################################
-#
-# Apply this patch in order to properly support m1882 flashlight and vibrator
-# https://gist.github.com/TRANSAERO21/881847e423ce543bfdf61c29cab83e77
-#
-##############################################################################
 
 # Assertion
 TARGET_OTA_ASSERT_DEVICE := m1882,16th
@@ -74,10 +68,13 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_PREBUILT_KERNEL := device/meizu/m1882/prebuilt/Image.gz-dtb
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := device/meizu/m1882/prebuilt/dtbo.img
+
+# Kernel [SOURCES]
+TARGET_KERNEL_SOURCE := kernel/meizu/sdm845
+TARGET_KERNEL_CONFIG := vendor/meizu/sdm845_defconfig
+TARGET_KERNEL_ADDITIONAL_CONFIG := vendor/meizu/m1882.config
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
